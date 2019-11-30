@@ -924,7 +924,7 @@ where
     ///
     /// Is not provided when both features are enabled
     #[cfg(all(feature = "hyper-integration", not(feature = "actix-integration")))]
-    pub fn into_web_service(self) -> Hyper<S> {
+    pub fn into_web_service(self: Arc<Self>) -> Hyper<S> {
         self.into_hyper_web_service()
     }
 }
